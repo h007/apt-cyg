@@ -71,3 +71,64 @@ apt-cyg is a simple script. To install:
 Example use of apt-cyg:
 
     apt-cyg install nano
+    
+    
+    
+
+
+https://github.com/transcode-open/apt-cyg
+
+
+https://blog.csdn.net/taanng/article/details/42216993
+添加常用Linux命令
+
+给Cygwin添加more/col/whereis等命令：安装util-linux包:apt-cyg install util-linux
+给Cygwin添加telnet/ftp工具:apt-cyg install inetutils
+给Cygwin安装dig命令
+安装bind-utils包:apt-cyg install bind-utils
+检查系统中已设置好DNS: ipconfig /all
+得到Windows格式的路径名?
+cygpath -d -m "`pwd`"
+
+mount 查看挂在目录
+进入F盘 
+cd f:
+
+配置盘符的链接
+http://oldratlee.com/post/2012-12-22/stunning-cygwin
+到F盘，要/cygdrive/df，可以新建符号链接/f，这样可以减少录入（MSYS的做法）
+进入F盘 
+cd /f
+
+利用cygwin(其实windows 下 git bash 可以轻松实现
+cp /f/kindleFile/三十六计.epub  /g/documents/
+不需要创建软件接
+)
+cygwin下 文件复制(tab 自动补全)
+window资源管理器 图形界面复制文件到 手机 kindle 太慢 
+
+
+
+ln -s /cygdrive/f /f
+
+自动补全不区分大小写
+~/.bashrc文件中添加：
+
+shopt -s nocaseglob
+~/.inputrc文件中添加：
+
+set completion-ignore-case on
+
+$ cp /f/kindleFile/三十六计.epub  /g/documents/
+
+
+dos环境 
+cmd
+复制
+xcopy.exe F:\kindleFile\三十六计.epub  G:\
+
+xcopy.exe f:kindleFile\xx\费曼物理学讲义.pdf g:
+
+在linux环境下
+xcopy.exe f:\\kindleFile\\xx\\费曼物理学讲.pdf g:
+(自动补全不可用)
